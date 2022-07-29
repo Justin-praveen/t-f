@@ -23,6 +23,8 @@ const Reg = () => {
        const value = await axios.post("http://localhost:4000/register",data)
        console.log(value)
 
+       alert("data added...!")
+
       }
       
   return (
@@ -40,23 +42,23 @@ const Reg = () => {
                         <div >
                         <div className='input-field fff col s8  offset-s2'>
                             
-                            <input id="Uname" placeholder='name' type="text" className="validate" onChange={(e)=>setname(e.target.value)} />  
+                            <input id="Uname" placeholder='name' required type="text" className="validate" onChange={(e)=>setname(e.target.value)} />  
                         <label htmlFor="Uname"></label>
                             </div>
                            
                              <div className='input-field fff col s8  offset-s2'>
                             
-                            <input id="Uname" placeholder='email' type="text" className="validate" onChange={(e)=>setemail(e.target.value)} />  
+                            <input id="Uname" placeholder='email' required type="text" className="validate" onChange={(e)=>setemail(e.target.value)} />  
                         <label htmlFor="Uname"></label>
                             </div>
                              <div className='input-field col s8  offset-s2'>
-                            <input id="email" placeholder='password' type="text" className="validate" onChange={(e)=>setpass(e.target.value)}  />  
+                            <input id="email" placeholder='password' type="text"  required className="validate" onChange={(e)=>setpass(e.target.value)}  />  
                         <label htmlFor="email"></label>
                             </div>
                            
                             <div className='input-field fff col s8  offset-s2'>
                             
-                            <input id="Uname" placeholder='designation' type="text" className="validate" onChange={(e)=>setdes(e.target.value)} />  
+                            <input id="Uname" placeholder='designation' type="text" required className="validate" onChange={(e)=>setdes(e.target.value)} />  
                         <label htmlFor="Uname"></label>
                             </div>
                         

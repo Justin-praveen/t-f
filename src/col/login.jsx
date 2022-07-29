@@ -58,12 +58,12 @@ const S2 = () => {
                         <div >
                         <div className='input-field fff col s8  offset-s2'>
                             
-                            <input id="Uname" placeholder='email' type="text" className="validate" onChange={(e)=>setemail(e.target.value)} />  
+                            <input id="Uname" placeholder='email' required type="text" className="validate" onChange={(e)=>setemail(e.target.value)} />  
                         <label htmlFor="Uname"></label>
                             </div>
                             <div className='input-field col s8  offset-s2'>
                             
-                            <input id="email" placeholder='password' type="text" className="validate" onChange={(e)=>setpass(e.target.value)}  />  
+                            <input id="email" placeholder='password' required type="text" className="validate" onChange={(e)=>setpass(e.target.value)}  />  
                         <label htmlFor="email"></label>
                             </div>
                          
