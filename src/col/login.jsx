@@ -27,13 +27,13 @@ const S2 = () => {
        const val = value.data.data
        console.log(val.admin)
 
-       if(val.admin === "0"){
+       if(val.admin === "false"){
         navi("/Home")
         alert("done")
 
        }
 
-       else if(val.admin === "1"){
+       else if(val.admin === "true"){
         navi("/admin")
        }
        else{

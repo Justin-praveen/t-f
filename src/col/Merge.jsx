@@ -6,12 +6,12 @@ import Data from './Data'
 
 const Merge = () => {
 
-    const [val ,setval] = useState("")
+    const [val ,setval] = useState(null)
+    let ji;
   return (
     <>
-    <Admin set = {setval}/>
-    <Data v = {val}/>
-    
+    <Admin set = {setval} lt = {ji}/>
+    <Data v = {val} ki={ji} set={setval}/>
     </>
   )
 }

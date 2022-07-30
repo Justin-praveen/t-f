@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Tilt from 'react-parallax-tilt';
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 const Reg = () => {
 
@@ -8,23 +9,46 @@ const Reg = () => {
     const [password,setpass] = useState(null)
     const [names,setname] = useState(null)
     const [designation,setdes] = useState(null);
+    const [profile,setpro] = useState(null)
+    
+    let admin = "false"
+
+    
+    const na = useNavigate()
 
       const Submit = async(e)=>{
         e.preventDefault()
 
-        const data = {
-            email : email,
-            password : password,
-            names : names,
-            designation : designation,
-            admin : true
-        }
+        // const data = {
+        //     email : email,
+        //     password : password,
+        //     names : names,
+        //     designation : designation,
+        //     admin : admin
+        // }
 
-       const value = await axios.post("http://localhost:4000/register",data)
+
+        const formData = await new FormData();
+
+        formData.append('email', email)
+        formData.append('password', password);
+        formData.append('names', names);
+        formData.append('designation', designation);
+        formData.append('profile', profile);
+        formData.append('admin', admin);
+        console.log(formData);
+
+       const value = await axios.post("http://localhost:4000/register",formData)
        console.log(value)
 
-       alert("data added...!")
+       if(value.data.reg){
+        alert("DATA added....!")
+na("/")
 
+       }
+       else{
+        alert(value.data)
+       }
       }
       
   return (
@@ -55,17 +79,25 @@ const Reg = () => {
                             <input id="email" placeholder='password' type="text"  required className="validate" onChange={(e)=>setpass(e.target.value)}  />  
                         <label htmlFor="email"></label>
                             </div>
+
+                            <div className='input-field col s8  offset-s2'>
+                            <input id="email" placeholder='file' type="file"  required className="validate" onChange={(e)=>setpro(e.target.files[0])}  />  
+                        <label htmlFor="email"></label>
+                            </div>
                            
+
                             <div className='input-field fff col s8  offset-s2'>
                             
                             <input id="Uname" placeholder='designation' type="text" required className="validate" onChange={(e)=>setdes(e.target.value)} />  
                         <label htmlFor="Uname"></label>
                             </div>
+
+
                         
                         <div className='row'>
                             <div className='col s4 offset-s5'>
                                  <button className='btn center' type='submit'  >
-                                login
+                                Signup
                             </button>
                             </div>
                            

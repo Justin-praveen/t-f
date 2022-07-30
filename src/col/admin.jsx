@@ -2,7 +2,7 @@ import React, {  useEffect } from 'react'
 import { useState } from 'react';
 import axios from "axios"
 
-const Admin = ({set}) => {
+const Admin = ({set,lt}) => {
 
 
     const [data,setdata]= useState(null);
@@ -24,6 +24,7 @@ const Admin = ({set}) => {
     }
 
 
+    lt = get()
   return (
 
 
@@ -33,7 +34,6 @@ const Admin = ({set}) => {
     
     
     data.map((da)=>{
-
     return(
         <div>
  <table className='striped center'>
@@ -46,7 +46,6 @@ const Admin = ({set}) => {
                 <th>delete</th>
             </tr>
         </thead>
-
         <tbody>
             <tr>
                 <td>{da.id}</td>
@@ -58,20 +57,17 @@ const Admin = ({set}) => {
                 <td><button className='btn red' onClick={async()=>{
                     const i = await {
                         id : da.id
-
                     }
                     const a = await axios.post(`http://localhost:4000/del`,i)
                     if(a){
                         get()
                     }
-
                 }}> delete</button></td>
             </tr>
           
         </tbody>
     </table>
         </div>
-
     )
    
 }))} */}
@@ -116,6 +112,7 @@ const Admin = ({set}) => {
                         <td>{da.email}</td>
                         <td>{da.password}</td>
                         <td>{da.designation}</td>
+                        <td><img src={`http://localhost:4000/${da.profile}`} width="100px" height="100px"/></td>
                         <td><button className='btn' onClick={()=>{
                             set(da)
                         }}>UPDATE</button></td>
