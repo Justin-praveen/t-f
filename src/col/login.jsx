@@ -74,6 +74,18 @@ const S2 = () => {
                                 login
                             </button>
                             </div>
+
+
+                           
+                        </div>
+                        <div className='row'>
+                            <div className='col s4 offset-s5'>
+                                 <button className='btn center' onClick={()=>navi("/reg")} >
+                                Signup
+                            </button>
+                            </div>
+
+                            
                            
                         </div>
                             
