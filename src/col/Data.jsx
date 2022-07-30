@@ -12,31 +12,13 @@ const Data = ({v,ki,set}) => {
     const [designation,setdes] = useState("");
     const [admin,setadmin] = useState("")
     
-// const [ups,setups] = useState()
 
-// const setdata = (e) => {
-//     console.log(e.target.value);
-//     const { name, value } = e.target;
-//     setup((preval) => {
-//         return {
-//             ...preval,
-//             [name]: value
-//         }
-//     })
-// }
   
 
 useEffect(()=>{
       if(v!==null){
   
-    //    setup({email : v.email,
-    //         password : v.password,
-    //         names : v.names,
-    //         designations : v.designation,
-    //         id : v.id,
-    //         admin : v.admin,
-         
-    //     })
+  
 
         setname(v.names)
         setemail(v.email)
@@ -64,16 +46,7 @@ useEffect(()=>{
         console.log(designation)
         console.log(v.id)
 
-        // const formData = await new FormData();
-
-        // formData.append('email', email)
-        // formData.append('password', password);
-        // formData.append('names', names);
-        // formData.append('designation', designation);
-       
-        // formData.append('admin',admin);
-        // formData.append("id",v.id)
-        // console.log(formData);
+     
 
         const ki = {
             email,
